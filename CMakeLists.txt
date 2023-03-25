@@ -18,11 +18,20 @@ add_library(open_aal STATIC
     ./src/include/aal/barslist.h
     ./src/include/aal/baudc.h
     ./src/include/aal/blal.h
-    ./src/main.cpp
+    ./src/amta.cpp
+    ./src/bars.cpp
 )
 
+target_include_directories(open_aal PUBLIC ./src/include)
+
 add_subdirectory(${PROJECT_SOURCE_DIR}/lib/ExtendedIO)
-target_link_libraries(open_aal PRIVATE ExtendedIO)
+target_link_libraries(open_aal PUBLIC ExtendedIO)
+
+set(BUILD_TESTING ON)
+
+if(BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
