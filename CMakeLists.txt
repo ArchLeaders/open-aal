@@ -11,13 +11,13 @@ include(CTest)
 enable_testing()
 
 add_library(open_aal STATIC
-    ./src/include/amta.h
-    ./src/include/baatn.h
-    ./src/include/bagst.h
-    ./src/include/bars.h
-    ./src/include/barslist.h
-    ./src/include/baudc.h
-    ./src/include/blal.h
+    ./src/include/aal/amta.h
+    ./src/include/aal/baatn.h
+    ./src/include/aal/bagst.h
+    ./src/include/aal/bars.h
+    ./src/include/aal/barslist.h
+    ./src/include/aal/baudc.h
+    ./src/include/aal/blal.h
     ./src/main.cpp
 )
 
