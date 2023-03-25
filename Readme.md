@@ -4,15 +4,15 @@ High hopes of being a functional IO libray for the AAL file formats used in firs
 
 # Formats
 
-| File Format                              | Description                                       |
-|------------------------------------------|---------------------------------------------------|
-| [amta](./src/include/aal/amta.h)         | **A**udio **M**e**ta**data                        |
-| [baatn](./src/include/aal/baatn.h)       | (**B**inary) **A**udio **At**te**n**uator         |
-| [bagst](./src/include/aal/bagst.h)       | (**B**inary) **A**udio **G**roup **S**e**t**tings |
-| [bars](./src/include/aal/bars.h)         | (**B**inary) **A**udio **R**e**s**ources          |
-| [barslist](./src/include/aal/barslist.h) | (**B**inary) **A**udio **R**e**s**ources **List** |
-| [baudc](./src/include/aal/baudc.h)       | (**B**inary) **Au**dio **D**istance **C**urves    |
-| [blal](./src/include/aal/blal.h)         | (**B**inary) **L**oop **A**sset **L**ist          |
+| File Format                              | Description                                       | Status
+|------------------------------------------|---------------------------------------------------|------------------------|
+| [amta](./src/include/aal/amta.h)         | **A**udio **M**e**ta**data                        | ☑ Readonly
+| [baatn](./src/include/aal/baatn.h)       | (**B**inary) **A**udio **At**te**n**uator         | ⚠ Work-in-progress
+| [bagst](./src/include/aal/bagst.h)       | (**B**inary) **A**udio **G**roup **S**e**t**tings | ⚠ Work-in-progress
+| [bars](./src/include/aal/bars.h)         | (**B**inary) **A**udio **R**e**s**ources          | ☑ Readonly
+| [barslist](./src/include/aal/barslist.h) | (**B**inary) **A**udio **R**e**s**ources **List** | ✖ Unsupported
+| [baudc](./src/include/aal/baudc.h)       | (**B**inary) **Au**dio **D**istance **C**urves    | ✖ Unsupported
+| [blal](./src/include/aal/blal.h)         | (**B**inary) **L**oop **A**sset **L**ist          | ⚠ Work-in-progress
 
 ### Source
 
