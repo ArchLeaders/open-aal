@@ -4,6 +4,7 @@ namespace aal {
 
 AudioMetadata::AudioMetadata(exio::BinaryReader reader, size_t offset) {
   const auto data{reader.span()};
+  reader.SetEndian(exio::Endianness::Big);  // always read in BE when setting the byte order
   m_reader = {data, exio::ByteOrderMarkToEndianness(reader.Read<amta::Header>(offset).value().bom)};
 
   const auto header = *m_reader.Read<amta::Header>(offset);
@@ -11,7 +12,6 @@ AudioMetadata::AudioMetadata(exio::BinaryReader reader, size_t offset) {
     throw exio::InvalidDataError("Invalid AMTA magic");
   }
   if (header.version != 0x0400) {
-    std::cout << (header.bom == 0xFEFF ? "BE" : "LE") << " | " << m_reader.Tell() << std::endl;
     throw exio::InvalidDataError("Only AMTA version 4 is supported");
   }
 
