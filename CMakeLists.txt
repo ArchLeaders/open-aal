@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(aal VERSION 0.1.0)
+project(open_aal VERSION 0.1.0)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_STATIC_LIBRARY_PREFIX "")
 
 include(CTest)
 enable_testing()
 
-add_library(aal STATIC
+add_library(open_aal STATIC
     ./src/include/amta.h
     ./src/include/baatn.h
     ./src/include/bagst.h
@@ -12,7 +18,11 @@ add_library(aal STATIC
     ./src/include/barslist.h
     ./src/include/baudc.h
     ./src/include/blal.h
+    ./src/main.cpp
 )
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/lib/ExtendedIO)
+target_link_libraries(open_aal PRIVATE ExtendedIO)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
