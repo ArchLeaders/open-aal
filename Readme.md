@@ -17,3 +17,7 @@ High hopes of being a functional IO libray for the AAL file formats used in firs
 ### Source
 
 https://github.com/kinnay/Nintendo-File-Formats/wiki#aal
+
+### Notes
+
+Based of files from Tears of the Kingdom and Breath of the Wild
